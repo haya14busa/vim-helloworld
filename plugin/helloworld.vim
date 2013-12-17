@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: helloworld.vim
 " AUTHOR: haya14busa
-" Last Change: 2013/12/17 21:02:19 .
+" Last Change: 2013/12/17 21:08:30 .
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the
@@ -31,7 +31,7 @@ let g:loaded_helloworld = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-echom 'Hello world! from plugin/heloworld.vim'
+command! -nargs=0 HelloWorld call helloworld#sayHello()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
