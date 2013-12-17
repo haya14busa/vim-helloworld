@@ -1,0 +1,5 @@
+- vitalの組み込み
+- unite-source
+- vim-textobj-user
+- vim-operator-user
+- buffer作る
