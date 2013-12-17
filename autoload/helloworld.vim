@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: helloworld.vim
 " AUTHOR: haya14busa
-" Last Change: 2013/12/17 20:58:03 .
+" Last Change: 2013/12/17 21:02:25 .
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the
@@ -26,6 +26,7 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
+echom 'Hello world! from autoload/helloworld.vim'
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
