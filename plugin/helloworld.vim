@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: helloworld.vim
 " AUTHOR: haya14busa
-" Last Change: 2013/12/17 21:08:30 .
+" Last Change: 2013/12/17 21:31:13 .
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the
@@ -23,17 +23,23 @@
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
 "=============================================================================
-if exists('g:loaded_helloworld')
+" Load Once {{{
+if exists('g:loaded_helloworld') && g:loaded_helloworld
   finish
 endif
 let g:loaded_helloworld = 1
+" }}}
 
+" Saving 'cpoptions' {{{
 let s:save_cpo = &cpo
 set cpo&vim
+" }}}
 
 command! -nargs=0 HelloWorld call helloworld#sayHello()
 
+" Restore 'cpoptions' {{{
 let &cpo = s:save_cpo
 unlet s:save_cpo
+" }}}
 
 " vim: foldmethod=marker
