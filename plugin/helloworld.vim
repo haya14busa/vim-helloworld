@@ -33,17 +33,37 @@ let g:loaded_helloworld = 1
 " Saving 'cpoptions' {{{
 let s:save_cpo = &cpo
 set cpo&vim
+" Reference: :h use-cpo-save
 " }}}
 
+" Define a user command {{{
 command! -nargs=0 HelloWorld call helloworld#sayHello()
+" Reference: :h command
+"            :h command-nargs
+"}}}
 
 " Prepare <Plug> mapping {{{
 noremap <silent><expr><Plug>(helloworld-sayHello) helloworld#sayHello()
+" Document {{{
+" Sample   : <Plug>(scriptname-mapname)
+" Reference: :h <Plug>
+"            :h using-<Plug>
+"            :h map-<expr>
+"            :h map-<silent>
+" }}}
 "}}}
 
 " Map to <Plug> {{{
 if ! exists('g:hello_world_not_overwrites_standard_mappings')
     map <unique> <Leader><Leader>h <Plug>(helloworld-sayHello)
+    " Document {{{
+    " Reference: :h :map-<unique>
+    "   the command will fail if the mapping or abbreviation already exists.
+    " Error Message Sample:
+    "   Error detected while processing /{Path to plugin}/vim-helloworld/plugin/helloworld.vim:
+    "   line   {line-num}:
+    "   E227: mapping already exists for \\h
+    " }}}
 endif
 "}}}
 
