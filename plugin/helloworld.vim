@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: helloworld.vim
 " AUTHOR: haya14busa
-" Last Change: 2013/12/17 22:12:18 .
+" Last Change: 20 Dec 2013.
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the

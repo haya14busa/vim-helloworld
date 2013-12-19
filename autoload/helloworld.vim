@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: helloworld.vim
 " AUTHOR: haya14busa
-" Last Change: 2013/12/17 22:20:29 .
+" Last Change: 20 Dec 2013.
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the
@@ -32,8 +32,18 @@ set cpo&vim
 " echom 'Load autoload/helloworld.vim'
 
 function! helloworld#sayHello() "{{{
-    echom 'Hello world! from autoload/helloworld.vim'
-endfunction"}}}
+    echom 'Happy Vimming! \("`v")/ [Vital] -> ' . string(helloworld#TestVital())
+endfunction "}}}
+
+" Vitalize {{{
+
+function! helloworld#TestVital() "{{{
+  return s:List.flatten([[1],[2,[3,4]]])
+endfunction "}}}
+
+let s:V = vital#of('vim-helloworld')
+let s:List = s:V.import('Data.List')
+"}}}
 
 " Restore 'cpoptions' {{{
 let &cpo = s:save_cpo
